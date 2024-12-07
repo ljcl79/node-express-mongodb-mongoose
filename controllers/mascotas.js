@@ -6,8 +6,9 @@ class mascotasController {
     }
 
     async create(req, res) {
+        const { nombre, tipo, raza, edad, descripcion, adoptado } = req.body;
         try {
-            const data = await mascotasModel.create(req.body);
+            const data = await mascotasModel.create({ nombre, tipo, raza, edad, descripcion, adoptado });
             res.status(201).json(data);
         } catch (e) {
             res.status(500).send(e);
@@ -15,9 +16,10 @@ class mascotasController {
     }
 
     async update(req, res) {
+        const { nombre, tipo, raza, edad, descripcion, adoptado } = req.body;
         try {
             const { id } = req.params;
-            const data = await mascotasModel.update(id, req.body);
+            const data = await mascotasModel.update(id, { nombre, tipo, raza, edad, descripcion, adoptado });
             res.status(200).json(data);
         } catch (e) {
             console.log(e);
