@@ -8,7 +8,7 @@ import dbClient from './config/dbClient.js';
 const app = express();
 
 import swaggerUI from 'swagger-ui-express';
-import swaggerDocumentation from './swagger.json' assert {type: 'json'};
+import swaggerDocumentation from './swagger.json';
 
 
 
